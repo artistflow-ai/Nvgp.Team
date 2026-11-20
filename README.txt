@@ -1,25 +1,22 @@
-NVGP.TEAM — sito starter
+# NVGP.TEAM — restyling statico
 
-CONTENUTO
-- index.html: pagina principale
-- style.css: grafica responsive
-- script.js: menu mobile e anno automatico
-- assets/nvgp-logo.png: logo ufficiale fornito
-- assets/nvgp-bot.png: mascotte concept
+## Contenuto
+- `index.html`: sito completo one-page, in italiano.
+- `style.css`: stile responsive nero / blu elettrico / viola.
+- `script.js`: menu mobile, selezione servizio e riepilogo ordine dimostrativo.
 
-PUBBLICAZIONE GRATUITA CON GITHUB PAGES
-1. Estrai lo ZIP sul computer.
-2. Crea un repository GitHub pubblico chiamato nvgp-team (o il nome che preferisci).
-3. Carica index.html, style.css, script.js e la cartella assets nella root del repository.
-4. Apri Settings > Pages.
-5. In Build and deployment seleziona Deploy from a branch, branch main e folder /(root), poi Save.
-6. Attendi la pubblicazione: GitHub mostrerà l'indirizzo gratuito del sito.
+## Pubblicazione su GitHub Pages
+1. Scarica ed estrai lo ZIP.
+2. Apri il repository GitHub collegato a `artistflow-ai.github.io/Nvgp.Team/`.
+3. Sostituisci i file del sito con `index.html`, `style.css` e `script.js` (mantieni eventuali asset del tuo repository se ti servono).
+4. Fai commit e attendi la pubblicazione GitHub Pages.
 
-DA COMPLETARE PRIMA DELLA MESSA ONLINE COMMERCIALE
-- Aggiungere i link esatti delle playlist Spotify per incorporare i player.
-- Configurare checkout Stripe e PayPal con account e credenziali del titolare; ora i pulsanti dei servizi aprono Instagram DM e NON incassano pagamenti.
-- Configurare il feed Instagram tramite API Meta e autorizzazione dell'account.
-- Definire contatti, termini/condizioni, privacy e cookie policy.
-- Validare i servizi, disponibilità e condizioni del listino.
+## Pagamenti: attenzione
+La sezione checkout è solo una demo front-end. Non incassa denaro e non invia dati a PayPal o a un gateway carte. Per attivare pagamenti reali:
+- PayPal: creare un'app PayPal Business e integrare PayPal Checkout lato server.
+- Carte: usare Stripe Checkout o un provider equivalente, con endpoint server-side.
+- Non inserire mai secret key nel JavaScript pubblico e non raccogliere o salvare numeri di carta/CVV sul sito statico.
+- Definire prima termini, privacy, condizioni del servizio, ricevute/fatturazione e politica di rimborsi.
 
-Nota: i numeri follower citati nel PDF sono stati omessi dal sito perché possono cambiare nel tempo. Nessun risultato di stream o crescita è garantito.
+## Dati da verificare prima della pubblicazione
+I prezzi e le descrizioni dei servizi riprendono quelli pubblicati sul sito attuale al momento della revisione. Controlla i link social, in particolare l'handle Instagram e i profili TikTok, prima di andare online.
