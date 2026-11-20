@@ -1,19 +1,30 @@
-const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
-$("#year").textContent=new Date().getFullYear();
-$(".hamb").addEventListener("click",()=>$("#nav").classList.toggle("open"));
-$$('#nav a').forEach(a=>a.addEventListener("click",()=>$("#nav").classList.remove("open")));
-$$(".filter").forEach(b=>b.addEventListener("click",()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");$$(".service").forEach(c=>c.hidden=b.dataset.filter!=="all"&&c.dataset.category!==b.dataset.filter)}));
-$$(".choose").forEach(b=>b.addEventListener("click",()=>{const option=[...$("#product").options].find(o=>o.value.split("|")[1]===b.dataset.name);if(option)$("#product").value=option.value;updateTotal();$("#checkout").scrollIntoView({behavior:"smooth"})}));
-function updateTotal(){const [price,name]=$("#product").value.split("|");$("#total-name").textContent=name;$("#total-price").textContent=Number(price).toLocaleString("it-IT",{style:"currency",currency:"EUR"})}
-$("#product").addEventListener("change",updateTotal);updateTotal();
-const modal=$("#account-modal");$("#account-open").addEventListener("click",()=>modal.classList.add("open"));$("#modal-close").addEventListener("click",()=>modal.classList.remove("open"));modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("open")});
-let authMode="login";$$(".tab").forEach(t=>t.addEventListener("click",()=>{$$(".tab").forEach(x=>x.classList.remove("active"));t.classList.add("active");authMode=t.dataset.mode;$("#auth-submit").textContent=authMode==="login"?"Accedi":"Crea account"}));
-let supabase=null;const cfg=window.NVGP_CONFIG||{};const configured=cfg.SUPABASE_URL?.startsWith("https://")&&!cfg.SUPABASE_URL.includes("YOUR-")&&cfg.SUPABASE_ANON_KEY&&!cfg.SUPABASE_ANON_KEY.includes("YOUR_");
-if(configured&&window.supabase){supabase=window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);supabase.auth.onAuthStateChange((_event,session)=>{if(session)loadProfile(session.user);else{$("#account-open").textContent="Accedi";$("#admin-panel").hidden=true}})}
-async function loadProfile(user){$("#account-open").textContent="Account";const {data}=await supabase.from("profiles").select("role").eq("id",user.id).maybeSingle();if(data?.role==="admin")$("#admin-panel").hidden=false}
-$("#auth-form").addEventListener("submit",async e=>{e.preventDefault();const email=$("#auth-email").value,password=$("#auth-password").value;if(!supabase){$("#auth-message").textContent="Configura Supabase in config.js e applica supabase/schema.sql per attivare gli account.";return}const result=authMode==="signup"?await supabase.auth.signUp({email,password}):await supabase.auth.signInWithPassword({email,password});$("#auth-message").textContent=result.error?result.error.message:(authMode==="signup"?"Controlla la tua email per confermare l'account.":"Accesso effettuato.");if(result.data?.user)loadProfile(result.data.user)});
-$("#article-form").addEventListener("submit",async e=>{e.preventDefault();if(!supabase){return}const {data:{user}}=await supabase.auth.getUser();const {data:profile}=await supabase.from("profiles").select("role").eq("id",user.id).single();if(profile?.role!=="admin"){alert("Accesso non autorizzato");return}const {error}=await supabase.from("articles").insert({title:$("#article-title").value,category:$("#article-category").value,image_url:$("#article-image").value,body:$("#article-body").value,published:true,author_id:user.id});$("#auth-message").textContent=error?error.message:"Articolo pubblicato.";if(!error)e.target.reset();loadArticles()});
-async function loadArticles(){if(!supabase)return;const {data}=await supabase.from("articles").select("id,title,category,image_url,body,created_at").eq("published",true).order("created_at",{ascending:false}).limit(6);if(!data?.length)return;$("#news-grid").innerHTML=data.map((a,i)=>`<article class="news-card ${i===0?"lead":""}">${a.image_url?`<img class="art" src="${escapeAttr(a.image_url)}" alt="">`:`<div class="art art-${["one","two","three"][i%3]}"><span>NVGP<br>NEWS</span></div>`}<div class="meta">${escapeHtml(a.category||"NEWS")} · NVGP.TEAM</div><h3>${escapeHtml(a.title)}</h3><p>${escapeHtml((a.body||"").slice(0,150))}</p></article>`).join("")}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}function escapeAttr(s){return escapeHtml(s)}
-if(supabase)loadArticles();
-$("#checkout-form").addEventListener("submit",async e=>{e.preventDefault();const email=$("#buyer-email").value,[amount,service]=$("#product").value.split("|"),method=$('input[name="method"]:checked').value;$("#pay-message").textContent="Controllo configurazione pagamento…";if(!supabase){$("#pay-message").textContent="Checkout non attivo: configura Supabase e le funzioni serverless. Nessun pagamento è stato effettuato.";return}const fn=method==="card"?"create-checkout":"paypal-order";const {data,error}=await supabase.functions.invoke(fn,{body:{email,service,amount:Number(amount)}});if(error||!data?.url){$("#pay-message").textContent="Pagamento non configurato o non disponibile. Contatta NVGP.TEAM; nessun addebito è stato effettuato.";return}location.href=data.url});
+
+const PAYPAL_LINKS = {
+  "Post Instagram": "https://www.paypal.com/ncp/payment/NCQ8MYHMR6HQ4",
+  "Storia Instagram": "https://www.paypal.com/ncp/payment/RJNDZ3S4QPSNU",
+  "Reel Instagram": "https://www.paypal.com/ncp/payment/4CWEKJQS6AK58",
+  "Pacchetto No Cap": "https://www.paypal.com/ncp/payment/W87KWJBS5KS2G",
+  "Post TikTok": "https://www.paypal.com/ncp/payment/8ME69UV3CHF6S",
+  "Video Lyrics TikTok": "https://www.paypal.com/ncp/payment/FPQR94UGDPQ2S",
+  "Spotify Basic": "https://www.paypal.com/ncp/payment/9VFKS39VXSBR8",
+  "Spotify Medium": "https://www.paypal.com/ncp/payment/FUM23F3J3J8WN",
+  "Spotify Premium": "https://www.paypal.com/ncp/payment/W7AM5F4JY8EJJ"
+};
+
+$("#checkout-form").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const service = $("#product").value.split("|")[1];
+  const paypalUrl = PAYPAL_LINKS[service];
+
+  if (!paypalUrl) {
+    $("#pay-message").textContent =
+      "Link PayPal non disponibile. Contatta NVGP.TEAM.";
+    return;
+  }
+
+  $("#pay-message").textContent =
+    "Reindirizzamento a PayPal...";
+
+  window.location.assign(paypalUrl);
+});
