@@ -1,0 +1,149 @@
+
+name: Refresh NVGP Team Website
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Update NVGP website
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          html = Path("index.html")
+          css = Path("style.css")
+
+          if not html.exists() or not css.exists():
+              raise SystemExit("File del sito non trovati.")
+
+          h = html.read_text(encoding="utf-8")
+          s = css.read_text(encoding="utf-8")
+
+          # Corregge i percorsi delle immagini
+          h = h.replace("assets/nvgp-logo.png", "nvgp-logo.png")
+          h = h.replace("assets/nvgp-bot.png", "nvgp-bot.png")
+
+          # Aggiorna il colore del brand
+          colors = {
+              "#eb19c8": "#3984D1",
+              "#ff36d6": "#68B1FF",
+              "#e800c5": "#3984D1",
+              "#4b073d": "#102A4A",
+              "#20051d": "#091626",
+              "#38092f": "#102A4A",
+              "#3c092f": "#102A4A",
+              "#35102e": "#142D49",
+              "#130d15": "#0B1420",
+          }
+
+          for old, new in colors.items():
+              s = s.replace(old, new)
+              h = h.replace(old, new)
+
+          # Rifiniture grafiche e responsive
+          s += """
+
+          /* NVGP TEAM — BLUE PREMIUM UPDATE */
+          :root {
+            --pink: #3984D1;
+            --pink2: #68B1FF;
+            --black: #05080D;
+            --panel: #101A28;
+          }
+
+          body {
+            background-color: #05080D;
+          }
+
+          .hero {
+            background:
+              radial-gradient(ellipse at 78% 45%,
+                #173D65 0, #0B1B2E 32%, #05080D 70%);
+          }
+
+          .hero-glow {
+            background: #3984D133;
+          }
+
+          .hero-mascot {
+            filter: drop-shadow(0 0 65px #3984D155);
+          }
+
+          .package {
+            background: linear-gradient(155deg,#142235,#0B111B);
+            border-radius: 8px;
+          }
+
+          .package:hover,
+          .social-grid a:hover {
+            border-color: #3984D1;
+            box-shadow: 0 12px 40px #3984D122;
+          }
+
+          .package-hot {
+            background: linear-gradient(155deg,#17385B,#0B1420);
+            border-color: #3984D1;
+          }
+
+          .ticker {
+            background: #3984D1;
+          }
+
+          .btn.primary,
+          .order,
+          .bot-launch,
+          .tag {
+            background: #3984D1;
+          }
+
+          .btn.primary:hover,
+          .order:hover {
+            background: #68B1FF;
+          }
+
+          .spotify-panel {
+            border-radius: 8px;
+          }
+
+          .social-grid a {
+            border-radius: 7px;
+          }
+
+          @media (prefers-reduced-motion: no-preference) {
+            .package, .social-grid a, .btn {
+              transition: all .25s ease;
+            }
+          }
+          """
+
+          # Aggiorna i metadati
+          h = h.replace(
+              '<meta name="theme-color" content="#080808">',
+              '<meta name="theme-color" content="#3984D1">'
+          )
+
+          html.write_text(h, encoding="utf-8")
+          css.write_text(s, encoding="utf-8")
+
+          print("Aggiornamento NVGP completato.")
+
+      - name: Commit and publish changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html style.css
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh NVGP Team website branding"
+          git push
+          
