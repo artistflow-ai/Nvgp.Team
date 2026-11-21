@@ -1,15 +1,77 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505"><meta name="description" content="NVGP STUDIO — strumenti e risorse per artisti emergenti."><title>NVGP STUDIO — Artist Workspace</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="studio.css"></head><body>
-<div class="topline"><span class="pulse"></span> NVGP ARTIST WORKSPACE <span class="top-right">NEVER GIVE UP · ALWAYS MOVE</span></div>
-<header class="header"><a class="brand" href="../"><img src="../nvgp-logo.png" alt="NVGP.TEAM"></a><button class="hamb" id="hamb">☰</button><nav id="nav"><a href="#workspace">Workspace</a><a href="#tools">Strumenti</a><a href="#planner">Release planner</a><a href="#presskit">Press kit</a><a href="#services">Promozione</a><a class="nav-studio" href="../">NVGP TEAM ↗</a></nav></header>
-<main><section class="hero"><div class="hero-content"><p class="eyebrow"><span class="pulse"></span> YOUR CAREER STARTS WITH A MOVE</p><h1>BUILD YOUR<br><em>OWN WAVE.</em></h1><p class="hero-desc">Il tuo spazio operativo per organizzare la musica, preparare le release, creare materiali e trovare nuove opportunità di promozione. Tutto in un unico posto.</p><div class="hero-actions"><a class="btn primary" href="#workspace">Apri workspace ↘</a><a class="btn outline" href="#tools">Esplora strumenti ↗</a></div><div class="hero-stats"><span><b>01</b> ORGANIZE</span><span><b>02</b> CREATE</span><span><b>03</b> PROMOTE</span></div></div></section>
-<div class="ticker"><div>ARTIST DEVELOPMENT ✳ RELEASE PLANNING ✳ CONTENT IDEAS ✳ PRESS KIT ✳ PROMOTION ✳ NEVER GIVE UP ✳&nbsp;</div></div>
-<section class="section" id="workspace"><div class="section-heading"><div><p class="kicker">01 / YOUR CONTROL ROOM</p><h2>ARTIST <em>WORKSPACE.</em></h2></div><p class="muted max">Imposta il tuo profilo e tieni a portata di mano le informazioni essenziali del tuo progetto.</p></div><div class="workspace-grid"><div class="panel"><div class="panel-top"><span class="kicker">ARTIST PROFILE</span><span class="live-dot">LOCAL SAVE</span></div><div class="avatar">NV<span>+</span></div><label>Nome artista<input id="artistName" placeholder="Es. NØCTRL"></label><label>Genere / sound<input id="artistGenre" placeholder="Trap, urban, alternative"></label><label>Città<input id="artistCity" placeholder="La tua città"></label><label>Descrizione breve<textarea id="artistBio" rows="3" placeholder="Racconta il tuo progetto..."></textarea></label><button class="btn primary full" id="saveProfile">Salva profilo</button><p class="note" id="profileStatus">I dati vengono salvati in questo browser.</p></div><div class="panel"><div class="panel-top"><span class="kicker">QUICK OVERVIEW</span><span class="muted">YOUR NEXT MOVE</span></div><div class="welcome"><small>WELCOME TO NVGP STUDIO</small><h3 id="welcomeName">READY TO<br>MAKE A MOVE?</h3><p class="muted">Un progetto forte ha bisogno di una direzione chiara. Parti da qui.</p></div><div class="quick-grid"><a href="#planner"><b>01</b><strong>Release planner</strong><small>Organizza la prossima uscita</small></a><a href="#presskit"><b>02</b><strong>Press kit builder</strong><small>Prepara la tua presentazione</small></a><a href="#tools"><b>03</b><strong>Content lab</strong><small>Genera idee e format</small></a><a href="#services"><b>04</b><strong>NVGP promotion</strong><small>Scopri i servizi editoriali</small></a></div></div></div></section>
-<section class="section" id="tools"><div class="section-heading"><div><p class="kicker">02 / CREATIVE TOOLBOX</p><h2>TOOLS FOR <em>ARTISTS.</em></h2></div><p class="muted max">Strumenti pratici per passare dall'idea alla pubblicazione. Questa versione usa generatori guidati locali; le funzioni AI avanzate potranno essere collegate in seguito.</p></div><div class="tool-grid">
-<article class="tool-card"><span class="tool-num">TOOL / 01</span><div class="tool-icon">✳</div><h3>CONTENT LAB</h3><p>Spunti per Reel, TikTok, teaser e storytelling.</p><label>Formato<select id="contentType"><option value="teaser">Teaser singolo</option><option value="behind">Behind the scenes</option><option value="story">Storytelling artista</option><option value="lyrics">Lyrics video</option><option value="release">Release day</option></select></label><button class="text-btn" id="generateIdeas">Genera idee ↗</button><div class="output" id="ideasOutput">Scegli un formato e genera una traccia creativa.</div></article>
-<article class="tool-card"><span class="tool-num">TOOL / 02</span><div class="tool-icon">⌘</div><h3>CAPTION MAKER</h3><p>Prepara una caption di lancio con call to action.</p><label>Titolo brano<input id="songTitle" placeholder="Titolo"></label><label>Mood<select id="captionMood"><option value="misterioso">Misterioso</option><option value="diretto">Diretto</option><option value="emotivo">Emotivo</option><option value="street">Street</option></select></label><button class="text-btn" id="makeCaption">Crea caption ↗</button><div class="output" id="captionOutput">La tua caption apparirà qui.</div></article>
-<article class="tool-card"><span class="tool-num">TOOL / 03</span><div class="tool-icon">◎</div><h3>CAMPAIGN CHECKLIST</h3><p>Controlla i passaggi prima della pubblicazione.</p><div class="checklist" id="checklist"><label><input type="checkbox"> Master e artwork definitivi</label><label><input type="checkbox"> Distribuzione e data confermate</label><label><input type="checkbox"> Pre-save / link smart pronti</label><label><input type="checkbox"> Teaser e contenuti verticali</label><label><input type="checkbox"> Bio, credits e press kit aggiornati</label><label><input type="checkbox"> Piano contenuti per release week</label></div><button class="text-btn" id="resetChecklist">Reset checklist ↻</button></article></div></section>
-<section class="planner-section" id="planner"><div class="section"><div class="section-heading"><div><p class="kicker">03 / PLAN THE DROP</p><h2>RELEASE <em>PLANNER.</em></h2></div><p class="muted max">Registra le prossime uscite e visualizza il tuo calendario personale.</p></div><div class="planner-grid"><form class="panel" id="releaseForm"><span class="kicker">ADD A RELEASE</span><label>Titolo release<input id="releaseTitle" required placeholder="Nome del singolo / EP"></label><label>Tipo<select id="releaseType"><option>Singolo</option><option>EP</option><option>Album</option><option>Video</option></select></label><label>Data di uscita<input id="releaseDate" type="date" required></label><label>Stato<select id="releaseStatus"><option>In preparazione</option><option>In distribuzione</option><option>Programmato</option><option>Pubblicato</option></select></label><button class="btn primary full" type="submit">Aggiungi al calendario +</button></form><div class="panel"><div class="panel-top"><span class="kicker">YOUR RELEASES</span><span class="muted" id="releaseCount">0 PROGETTI</span></div><div id="releaseList" class="release-list"><p class="empty">Ancora nessuna uscita programmata.</p></div></div></div></div></section>
-<section class="section" id="presskit"><div class="section-heading"><div><p class="kicker">04 / YOUR STORY, PROFESSIONALLY</p><h2>PRESS KIT <em>BUILDER.</em></h2></div><p class="muted max">Crea una scheda artista ordinata da copiare e inviare a magazine e collaboratori.</p></div><div class="presskit-grid"><form class="panel" id="pressForm"><label>Nome artista<input id="pkName" placeholder="Nome d'arte"></label><label>Genere musicale<input id="pkGenre" placeholder="Genere / sottogenere"></label><label>Città / provenienza<input id="pkOrigin" placeholder="Città"></label><label>Bio artista<textarea id="pkBio" rows="5" placeholder="La tua storia, il tuo sound, il tuo percorso..."></textarea></label><label>Ultima release<input id="pkRelease" placeholder="Titolo + link ascolto"></label><label>Social / contatti<input id="pkSocial" placeholder="@Instagram · email"></label><button type="submit" class="btn primary full">Genera press kit ↗</button></form><div class="press-preview"><div class="panel-top"><span class="kicker">PREVIEW / ARTIST ONE-SHEET</span><button id="copyPress" class="copy-btn">Copia testo</button></div><div id="pressOutput" class="press-output"><small>NVGP STUDIO / ARTIST PROFILE</small><h3>YOUR ARTIST<br><em>STORY.</em></h3><p>Compila i campi per preparare la tua scheda artista.</p></div></div></div></section>
-<section class="services-section" id="services"><div class="section"><div class="section-heading"><div><p class="kicker">05 / GET YOUR MUSIC OUT THERE</p><h2>NVGP <em>PROMOTION.</em></h2></div><p class="muted max">Dai visibilità al tuo progetto attraverso i canali e i servizi editoriali NVGP TEAM.</p></div><div class="service-grid"><article class="service"><small>INSTAGRAM / EDITORIAL</small><h3>POST & STORY</h3><p>Presentazione del tuo progetto attraverso i canali Instagram NVGP.</p><a href="../#services">Scopri i servizi ↗</a></article><article class="service featured"><small>FEATURED PACKAGE</small><h3>NO CAP</h3><p>Post dedicato, contenuto lyrics su Instagram e TikTok e proposta di inserimento in playlist secondo disponibilità editoriale.</p><a href="../#services">Richiedi informazioni ↗</a></article><article class="service"><small>ARTIST CONTENT</small><h3>VIDEO & LYRICS</h3><p>Contenuti verticali e formati social per accompagnare la tua release.</p><a href="../#contact">Parliamone ↗</a></article></div><p class="legal-note">I tool creativi di questa versione sono generatori guidati di idee e testi modello, non servizi AI remoti. Nessuna funzione promette stream, follower o risultati garantiti. I servizi promozionali sono soggetti a valutazione e disponibilità.</p></div></section>
-<section class="section cta-inner"><div><p class="kicker">06 / CONNECT WITH THE SCENE</p><h2>MAKE YOUR<br><em>NEXT MOVE.</em></h2><p class="muted">Hai un progetto da far conoscere? Entra in contatto con la redazione NVGP.</p></div><a class="btn primary" href="https://www.instagram.com/nvgp.team/" target="_blank" rel="noopener">Contatta NVGP ↗</a></section></main>
-<footer><a class="brand" href="../"><img src="../nvgp-logo.png" alt="NVGP.TEAM"></a><span>NVGP STUDIO · ARTIST WORKSPACE</span><a href="../">TORNA A NVGP TEAM ↗</a><small>© <span id="year"></span> NVGP.TEAM · NEVER GIVE UP.</small></footer><script src="studio.js"></script></body></html>
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NVGP STUDIO — The Artist District</title>
+<meta name="description" content="NVGP STUDIO: strumenti e community per artisti rap, trap e urban emergenti.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/studio.css">
+<script src="js/config.js"></script>
+</head><body>
+<header class="bar"><a class="logo" href="#/">NVGP<b>STUDIO</b></a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+<nav id="nav"><a href="#/radar">Release Radar</a><a href="#/directory">Directory</a><a href="#/promotion">Promotion</a>
+<a href="#/dashboard">Dashboard</a><a href="#/planner">Planner</a><a href="#/presskit">Press kit</a>
+<a href="../" class="ext">Magazine NVGP TEAM</a><a href="#/auth" id="authLink" class="cta">Accedi</a></nav></header>
+<main id="app" tabindex="-1"></main>
+<footer><b>NVGP STUDIO</b> — YOUR SOUND. YOUR WORLD.<span>Nessun risultato o numero di stream è garantito. <a href="../">NVGP TEAM</a> · <a href="https://www.instagram.com/nvgp.team/">Instagram</a></span></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<template id="v-home">
+<section class="hero"><p class="tag">NVGP STUDIO presenta</p>
+<h1><span>THE</span><span class="g">ARTIST</span><span>DISTRICT</span></h1>
+<p class="lead">YOUR SOUND. YOUR WORLD. Profilo, calendario uscite e press kit per artisti rap, trap e urban emergenti. Gratis, nel quartiere di chi la musica la fa.</p>
+<div class="row"><a class="btn" href="#/auth">Entra nel distretto</a><a class="btn o" href="#/directory">Sfoglia gli artisti</a></div></section>
+<section class="grid3">
+<a class="card ph" href="#/directory"><em>Artist Spotlight</em><h3>Gli artisti del distretto</h3><p>Profili pubblici, approvati dalla redazione.</p></a>
+<a class="card ph" href="#/radar"><em>Release Radar</em><h3>Le prossime uscite</h3><p>Cosa esce, quando, da chi.</p></a>
+<a class="card ph" href="#/promotion"><em>Promotion</em><h3>Servizi NVGP TEAM</h3><p>Richiedi informazioni o candidati.</p></a></section>
+<section class="split"><div><h2>Playlist</h2><p>Sostituisci l'ID in <code>js/config.js</code> con la tua playlist Spotify.</p></div><div id="pl"></div></section>
+<section class="split inv"><div><h2>Il magazine</h2><p>Interviste, recensioni e scena. Il magazine NVGP TEAM resta il cuore del progetto.</p></div><a class="btn" href="../">Vai a NVGP TEAM</a></section>
+</template>
+
+<template id="v-auth"><section class="narrow"><h2>Accedi o registrati</h2><p id="cfgWarn" class="warn" hidden>Supabase non è ancora configurato: vedi README, sezione 1.</p>
+<form id="authForm"><label>Email<input name="email" type="email" required autocomplete="email"></label>
+<label>Password<input name="password" type="password" minlength="8" required autocomplete="current-password"></label>
+<div class="row"><button class="btn" data-m="in">Accedi</button><button class="btn o" data-m="up">Registrati</button></div>
+<button type="button" class="lnk" id="reset">Password dimenticata?</button></form></section></template>
+
+<template id="v-dashboard"><section><h2>Dashboard</h2><div id="gate"></div>
+<form id="profForm" class="cols" hidden>
+<label>Nome artistico<input name="stage_name" required maxlength="60"></label>
+<label>Genere<input name="genre" placeholder="Trap, Drill, Boom bap…" maxlength="60"></label>
+<label class="w">Bio breve (directory)<input name="bio_short" maxlength="160"></label>
+<label class="w">Biografia completa<textarea name="bio" rows="5" maxlength="2000"></textarea></label>
+<label>URL fotografia<input name="photo_url" type="url" placeholder="https://…"></label>
+<label>Instagram<input name="instagram" type="url"></label><label>Spotify<input name="spotify" type="url"></label><label>YouTube<input name="youtube" type="url"></label>
+<label>Contatto booking<input name="contact" maxlength="120"></label>
+<label>Stato progetto<select name="status"><option>In scrittura</option><option>In studio</option><option>Pronto a uscire</option><option>Attivo</option></select></label>
+<div class="row w"><button class="btn">Salva profilo</button><button type="button" class="btn o" id="pub">Richiedi pubblicazione in Directory</button></div>
+<p id="pubState" class="w small"></p></form>
+<div id="recent"></div></section></template>
+
+<template id="v-planner"><section><h2>Release planner</h2><div id="gate"></div>
+<form id="relForm" class="cols" hidden><label>Titolo<input name="title" required maxlength="100"></label>
+<label>Tipo<select name="type"><option>Singolo</option><option>EP</option><option>Album</option><option>Videoclip</option><option>Campagna</option></select></label>
+<label>Data<input type="date" name="release_date" required></label>
+<label>Stato<select name="status"><option>In preparazione</option><option>Programmata</option><option>Pubblicata</option></select></label>
+<label class="w check"><input type="checkbox" name="is_public" checked> Mostra nel Release Radar (solo se il profilo è pubblico)</label>
+<button class="btn">Aggiungi</button></form><div id="rels" class="list"></div></section></template>
+
+<template id="v-presskit"><section><h2>Press kit</h2><div id="gate"></div>
+<div id="kit" hidden><div class="row noprint"><button class="btn" id="print">Stampa / salva PDF</button><a class="btn o" href="#/dashboard">Modifica dati</a></div><article id="kitDoc" class="kit"></article></div></section></template>
+
+<template id="v-directory"><section><h2>Artist directory</h2><div id="dir" class="grid3"></div></section></template>
+<template id="v-radar"><section><h2>Release radar</h2><div id="rad" class="list"></div></section></template>
+
+<template id="v-promotion"><section><h2>NVGP Promotion</h2><p class="lead2">Servizi editoriali soggetti a valutazione e disponibilità. Nessun risultato, stream o follower garantito.</p>
+<div class="grid3"><div class="card"><h3>Post &amp; Story</h3><p>Presentazione del progetto sui canali Instagram NVGP.</p></div>
+<div class="card hl"><h3>No Cap</h3><p>Post dedicato, contenuto lyrics su Instagram e TikTok, proposta playlist secondo disponibilità.</p></div>
+<div class="card"><h3>Video &amp; Lyrics</h3><p>Formati verticali per accompagnare la release.</p></div></div>
+<div class="split"><div><h3>Candidatura</h3><div id="tally"></div></div>
+<form id="infoForm"><h3>Richiedi informazioni</h3><input type="hidden" name="access_key" id="w3k"><input type="checkbox" name="botcheck" hidden>
+<label>Nome<input name="name" required></label><label>Email<input name="email" type="email" required></label>
+<label>Messaggio<textarea name="message" rows="4" required></textarea></label><div id="ts"></div>
+<button class="btn">Invia</button><a class="lnk" href="https://www.instagram.com/nvgp.team/">Scrivici su Instagram</a></form></div></section></template>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/app.js"></script></body></html>
