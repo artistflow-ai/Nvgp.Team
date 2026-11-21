@@ -1,51 +1,99 @@
 <!doctype html>
 <html lang="it">
-<head> <link rel="stylesheet" href="social-feed.css">
+<head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#09060a"><meta name="description" content="NVGP.TEAM — urban music magazine, news e promozione artistica.">
-<title>NVGP.TEAM — Never Give Up</title>
+<meta name="theme-color" content="#050505">
+<meta name="description" content="NVGP.TEAM — Independent Urban Music Media. News, rap culture, new releases e promozione artistica.">
+<meta property="og:title" content="NVGP.TEAM — We push the scene">
+<meta property="og:description" content="Independent Urban Music Media.">
+<title>NVGP.TEAM — We Push The Scene</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body> <script async src="https://www.instagram.com/embed.js"></script>
+<body>
 <div class="topline"><span class="pulse"></span> INDEPENDENT URBAN MUSIC MEDIA <span class="top-right">NEVER GIVE UP · ALWAYS MOVE</span></div>
-<header class="site-header"><a class="logo" href="#" aria-label="NVGP.TEAM Home"><img src="nvgp-logo.png" alt="NVGP.TEAM"></a>
-<button class="hamb" aria-label="Apri menu">☰</button><nav id="nav"><a href="#news">News</a><a href="#releases">Release</a><a href="#services">Promozione</a><a href="#about">Magazine</a><a class="nav-cta" href="#contact">Collabora ↗</a><button id="account-open" class="nav-login">Accedi</button></nav>
+<header class="header">
+ <a class="brand" href="#home" aria-label="NVGP Team home"><img src="nvgp-logo.png" alt="NVGP.TEAM"></a>
+ <button class="hamb" id="hamb" aria-label="Apri menu" aria-expanded="false">☰</button>
+ <nav id="nav">
+  <a href="#about">About</a><a href="#news">News</a><a href="#services">Services</a><a href="#playlists">Playlists</a><a href="#social">Social</a><a href="#contact">Contact</a>
+  <a class="nav-studio" href="studio/">NVGP STUDIO ↗</a><button id="account-open" class="login-btn">Accedi</button>
+ </nav>
 </header>
-<main>
-<section class="hero"><img src="nvgp-never-give-up-banner.jpg" alt="NVGP Never Give Up" class="hero-banner"><div class="hero-overlay"></div><div class="hero-copy"><p class="eyebrow"><span class="pulse"></span> RAP · URBAN · NEW TALENTS</p><h1>LA SCENA<br><em>NON SI FERMA.</em></h1><p>News, nuove uscite e promozione musicale. Una piattaforma per chi crea, racconta e vive la cultura urban.</p><div class="actions"><a class="btn hot" href="#news">Esplora le news ↘</a><a class="btn ghost" href="#services">Promuovi la tua musica ↗</a></div></div><div class="hero-foot"><span>01 / NEVER GIVE UP</span><span>ITALIAN RAP · GLOBAL CULTURE</span><span>SCROLL TO DISCOVER ↓</span></div></section>
-<div class="ticker"><div>NVGP NEWS ✳ RAP ITALIANO ✳ INTERNATIONAL SCENE ✳ NEW MUSIC ✳ ARTIST PROMOTION ✳ NEVER GIVE UP ✳ NVGP NEWS ✳</div></div>
-<section class="section" id="news"><div class="section-head"><div><p class="kicker">01 / THE NEWSROOM</p><h2>ULTIME <em>NEWS.</em></h2></div><p class="sub">Le notizie, le storie e i protagonisti che muovono la scena.</p></div><div id="news-grid" class="news-grid"><article class="news-card lead"><div class="art art-one"><span>NVGP<br><b>REPORT</b></span></div><div class="meta">EDITORIAL · NVGP.TEAM</div><h3>La cultura urban ha una nuova casa.</h3><p>Qui appariranno gli articoli pubblicati dalla redazione NVGP.</p></article><article class="news-card"><div class="art art-two"><span>NEW<br>WAVE</span></div><div class="meta">ARTISTI EMERGENTI</div><h3>Nuove voci, nuove direzioni.</h3><p>Scopri i progetti che stanno crescendo nella scena.</p></article><article class="news-card"><div class="art art-three"><span>FRESH<br>DROPS</span></div><div class="meta">NUOVE USCITE</div><h3>Le release da tenere d'occhio.</h3><p>Singoli, album e collaborazioni.</p></article></div></section>
-<section class="release-band" id="releases"><div class="section"><div class="section-head"><div><p class="kicker">02 / FRESH FROM THE SCENE</p><h2>NEW <em>RELEASES.</em></h2></div><p class="sub">Artisti da scoprire e progetti da ascoltare.</p></div><div class="release-grid"><div class="release-tile"><b>01</b><span>ARTIST<br>SPOTLIGHT</span></div><div class="release-tile alt"><b>02</b><span>FRESH<br>DROP</span></div><div class="release-tile third"><b>03</b><span>UNDER<br>GROUND</span></div></div></div></section>
-<section class="section" id="services"><div class="section-head"><div><p class="kicker">03 / MAKE YOUR MOVE</p><h2>YOUR MUSIC.<br><em>OUR PLATFORM.</em></h2></div><p class="sub">Scegli il servizio promozionale e invia la tua richiesta. Prezzi e disponibilità sono da confermare prima del pagamento.</p></div><div class="filters"><button class="filter active" data-filter="all">Tutti</button><button class="filter" data-filter="instagram">Instagram</button><button class="filter" data-filter="tiktok">TikTok</button><button class="filter" data-filter="spotify">Spotify</button></div><div id="service-grid" class="service-grid">
-<article class="service" data-category="instagram"><small>INSTAGRAM / 01</small><h3>Post Instagram</h3><p>Un post dedicato per presentare il tuo brano o progetto.</p><strong>35€</strong><button data-name="Post Instagram" data-price="35" class="choose">Seleziona ↗</button></article>
-<article class="service" data-category="instagram"><small>INSTAGRAM / 02</small><h3>Storia Instagram</h3><p>Una story per annunciare un'uscita o rilanciare un contenuto.</p><strong>15€</strong><button data-name="Storia Instagram" data-price="15" class="choose">Seleziona ↗</button></article>
-<article class="service" data-category="instagram"><small>INSTAGRAM / 03</small><h3>Reel / Video Lyrics</h3><p>Contenuto video verticale dedicato al tuo brano.</p><strong>50€</strong><button data-name="Reel Instagram" data-price="50" class="choose">Seleziona ↗</button></article>
-<article class="service featured" data-category="instagram"><small>NVGP FEATURE</small><h3>No Cap</h3><p>Copertina personalizzata, foto e titolo dedicato.</p><strong>80€</strong><button data-name="Pacchetto No Cap" data-price="80" class="choose">Seleziona ↗</button></article>
-<article class="service" data-category="tiktok"><small>TIKTOK / 01</small><h3>Post TikTok</h3><p>Pubblicazione di un post con grafica dedicata.</p><strong>10€</strong><button data-name="Post TikTok" data-price="10" class="choose">Seleziona ↗</button></article>
-<article class="service" data-category="tiktok"><small>TIKTOK / 02</small><h3>Video Lyrics</h3><p>Video lyrics sul profilo TikTok dedicato.</p><strong>80€</strong><button data-name="Video Lyrics TikTok" data-price="80" class="choose">Seleziona ↗</button></article>
-<article class="service" data-category="spotify"><small>SPOTIFY / 01</small><h3>Basic</h3><p>Playlist a scelta per una settimana e story di annuncio.</p><strong>10€</strong><button data-name="Spotify Basic" data-price="10" class="choose">Seleziona ↗</button></article>
-<article class="service" data-category="spotify"><small>SPOTIFY / 02</small><h3>Medium</h3><p>Playlist a scelta per due settimane e story di annuncio.</p><strong>25€</strong><button data-name="Spotify Medium" data-price="25" class="choose">Seleziona ↗</button></article>
-<article class="service featured" data-category="spotify"><small>LONG RUN</small><h3>Premium</h3><p>Playlist a scelta per un mese e story di annuncio.</p><strong>40€</strong><button data-name="Spotify Premium" data-price="40" class="choose">Seleziona ↗</button></article>
-</div><p class="legal-note">Le promozioni non garantiscono numeri specifici di stream, follower o risultati. Non vengono promessi ascolti artificiali. Verifica disponibilità, condizioni e politica di rimborso prima di acquistare.</p></section>
-<section class="checkout-wrap" id="checkout"><div class="section checkout"><div><p class="kicker">04 / SECURE CHECKOUT</p><h2>MAKE IT<br><em>OFFICIAL.</em></h2><p class="sub">Riepiloga il servizio e procedi al pagamento quando l'amministrazione avrà configurato i provider.</p><div class="payment-badges"><b>PayPal</b><span>VISA</span><span>Mastercard</span></div></div><form id="checkout-form" class="checkout-card"><div class="form-top">NVGP / ORDER SUMMARY <span>● SECURE AREA</span></div><label>Servizio<select id="product"><option value="35|Post Instagram">Post Instagram — 35€</option><option value="15|Storia Instagram">Storia Instagram — 15€</option><option value="50|Reel Instagram">Reel Instagram — 50€</option><option value="80|Pacchetto No Cap">Pacchetto No Cap — 80€</option><option value="10|Post TikTok">Post TikTok — 10€</option><option value="80|Video Lyrics TikTok">Video Lyrics TikTok — 80€</option><option value="10|Spotify Basic">Spotify Basic — 10€</option><option value="25|Spotify Medium">Spotify Medium — 25€</option><option value="40|Spotify Premium">Spotify Premium — 40€</option></select></label><label>Email<input id="buyer-email" type="email" required placeholder="nome@email.com"></label><div class="total"><span id="total-name">Post Instagram</span><b id="total-price">35,00 €</b></div><div class="pay-options"><label><input type="radio" name="method" value="paypal" checked> PayPal</label><label><input type="radio" name="method" value="card"> Carta (Visa / Mastercard)</label></div><button class="btn hot full" type="submit">Continua al pagamento ↗</button><p id="pay-message" class="smallprint">Pagamenti non attivi finché non vengono inserite le credenziali segrete nel backend. Nessun addebito viene effettuato da questa demo.</p></form></div></section>
-<section class="section about" id="about"><div class="about-mark">NV<span>GP</span><small>NEVER GIVE UP.</small></div><div><p class="kicker">05 / WHO WE ARE</p><h2>NON SEGUIAMO<br>LA SCENA. <em>LA RACCONTIAMO.</em></h2><p>NVGP.TEAM è un magazine indipendente dedicato alla musica rap e alla cultura urban. Raccontiamo le novità, valorizziamo gli artisti e offriamo servizi promozionali per dare spazio ai progetti musicali.</p><a class="btn ghost" href="#contact">Entra in contatto ↗</a></div></section>
-<section class="bot-section" id="nvgp-bot">
-  <div class="section bot-inner">
-    <div class="bot-copy">
-      <p class="kicker">07 / NVGP INTELLIGENCE</p>
-      <h2>MEET <em>NVGP BOT.</em></h2>
-      <p>Un nuovo assistente digitale per orientarti tra servizi, promozione e mondo NVGP.</p>
-      <span class="coming-soon">COMING SOON</span>
-    </div>
-    <img src="nvgp-bot.png" alt="Mascotte NVGP BOT" loading="lazy">
-  </div>
+<main id="home">
+<section class="hero">
+ <img class="hero-bg" src="nvgp-never-give-up-banner.jpg" alt="" fetchpriority="high">
+ <div class="hero-shade"></div><div class="hero-content">
+  <p class="eyebrow"><span class="pulse"></span> RAP · HIP HOP · URBAN CULTURE</p>
+  <h1>WE DON'T FOLLOW<br>THE SCENE.<br><em>WE PUSH IT.</em></h1>
+  <p class="hero-desc">Independent Urban Music Media. News, rap culture, new releases and artist promotion. We give visibility to music and connect people with the urban scene.</p>
+  <div class="hero-actions"><a class="btn primary" href="#news">Explore news <span>↘</span></a><a class="btn outline" href="#services">Our services <span>↗</span></a></div>
+ </div>
+ <div class="hero-bottom"><span>01 / NEVER GIVE UP</span><span>ITALIAN RAP · GLOBAL CULTURE</span><span>SCROLL TO DISCOVER ↓</span></div>
 </section>
-<section class="contact" id="contact"><div class="section contact-inner"><div><p class="kicker">06 / JOIN THE MOVEMENT</p><h2>YOUR NEXT<br><em>MOVE STARTS HERE.</em></h2><p>Sei un artista, producer, etichetta o vuoi proporre una notizia? Scrivici.</p><a class="btn hot" href="https://www.instagram.com/nvgp.team/" target="_blank" rel="noopener">Instagram NVGP ↗</a></div><div class="contact-stamp">NVGP.TEAM<br><small>EMERGENT URBAN MUSIC MEDIA</small><b>NEVER GIVE UP.</b></div></div></section>
+<div class="ticker"><div>NVGP NEWS ✳ RAP ITALIANO ✳ INTERNATIONAL SCENE ✳ NEW MUSIC ✳ ARTIST PROMOTION ✳ NEVER GIVE UP ✳&nbsp;</div></div>
+
+<section class="section" id="about">
+ <div class="section-heading"><div><p class="kicker">01 / THE MOVEMENT</p><h2>WE PUSH<br><em>THE CULTURE.</em></h2></div><p class="muted max">Non seguiamo semplicemente quello che succede: raccontiamo la scena, intercettiamo nuove direzioni e diamo spazio ai talenti che hanno qualcosa da dire.</p></div>
+ <div class="about-grid"><div class="about-visual"><span class="about-symbol">NV<span>GP</span></span><small>NEVER GIVE UP. ALWAYS MOVE.</small></div><div class="about-copy"><p class="kicker">INDEPENDENT URBAN MUSIC MEDIA</p><h3>Una piattaforma.<br>Una scena in movimento.</h3><p>NVGP.TEAM è un magazine indipendente dedicato alla musica rap e alla cultura urban. Raccontiamo le novità, valorizziamo artisti e producer e offriamo servizi promozionali per dare spazio ai progetti musicali.</p><a class="text-link" href="#contact">Entra nella scena ↗</a></div></div>
+</section>
+
+<section class="section news-section" id="news">
+ <div class="section-heading"><div><p class="kicker">02 / THE NEWSROOM</p><h2>LATEST <em>NEWS.</em></h2></div><p class="muted max">Le notizie, le storie e i protagonisti che muovono la scena.</p></div>
+ <div class="category-row" id="news-filters"><button class="chip active" data-category="all">Tutte</button><button class="chip" data-category="Rap News">Rap News</button><button class="chip" data-category="New Releases">New Releases</button><button class="chip" data-category="Artist Spotlight">Artist Spotlight</button><button class="chip" data-category="Underground">Underground</button><button class="chip" data-category="Urban Culture">Urban Culture</button></div>
+ <div class="news-grid" id="news-grid">
+  <article class="news-card featured"><div class="news-art art-a"><span>NVGP<br><b>REPORT</b></span></div><div class="meta">EDITORIAL · NVGP.TEAM</div><h3>La cultura urban ha una nuova casa.</h3><p>News, nuove uscite e storie dalla scena: entra nel mondo NVGP.</p><a class="text-link" href="#contact">Proponi una notizia ↗</a></article>
+  <article class="news-card"><div class="news-art art-b"><span>NEW<br>WAVE</span></div><div class="meta">ARTIST SPOTLIGHT</div><h3>Nuove voci, nuove direzioni.</h3><p>Scopri i progetti emergenti che stanno costruendo il prossimo suono.</p></article>
+  <article class="news-card"><div class="news-art art-c"><span>FRESH<br>DROPS</span></div><div class="meta">NEW RELEASES</div><h3>Le release da tenere d'occhio.</h3><p>Singoli, album e collaborazioni da aggiungere al radar.</p></article>
+ </div>
+ <p class="section-note">Gli articoli pubblicati dal pannello redazione appariranno qui quando Supabase sarà configurato.</p>
+</section>
+
+<section class="release-section" id="releases"><div class="section">
+ <div class="section-heading"><div><p class="kicker">03 / FRESH FROM THE SCENE</p><h2>NEW <em>RELEASES.</em></h2></div><p class="muted max">Artisti da scoprire e progetti da ascoltare. La prossima release che conta potrebbe essere la tua.</p></div>
+ <div class="release-grid"><div class="release-tile"><small>01 / DISCOVER</small><b>ARTIST<br>SPOTLIGHT</b><span>NEW TALENTS</span></div><div class="release-tile tile-two"><small>02 / LISTEN</small><b>FRESH<br>DROP</b><span>NEW MUSIC</span></div><div class="release-tile tile-three"><small>03 / EXPLORE</small><b>UNDER<br>GROUND</b><span>NO LIMITS</span></div></div>
+</div></section>
+
+<section class="section" id="services">
+ <div class="section-heading"><div><p class="kicker">04 / MAKE YOUR MOVE</p><h2>YOUR MUSIC.<br><em>OUR PLATFORM.</em></h2></div><p class="muted max">Scegli il servizio promozionale più adatto al tuo progetto. Contattaci per verificare disponibilità, materiali e tempistiche.</p></div>
+ <div class="category-row" id="service-filters"><button class="chip active" data-filter="all">Tutti</button><button class="chip" data-filter="instagram">Instagram</button><button class="chip" data-filter="tiktok">TikTok</button><button class="chip" data-filter="spotify">Spotify</button></div>
+ <div class="service-grid" id="service-grid">
+  <article class="service" data-category="instagram"><small>INSTAGRAM / 01</small><h3>Post Instagram</h3><p>Un post dedicato per presentare il tuo brano o progetto.</p><strong>€35</strong><button class="service-select" data-name="Post Instagram" data-price="35">Seleziona ↗</button></article>
+  <article class="service" data-category="instagram"><small>INSTAGRAM / 02</small><h3>Storia Instagram</h3><p>Una story per annunciare un'uscita o rilanciare un contenuto.</p><strong>€15</strong><button class="service-select" data-name="Storia Instagram" data-price="15">Seleziona ↗</button></article>
+  <article class="service" data-category="instagram"><small>INSTAGRAM / 03</small><h3>Reel Instagram</h3><p>Contenuto video verticale dedicato al tuo brano.</p><strong>€50</strong><button class="service-select" data-name="Reel Instagram" data-price="50">Seleziona ↗</button></article>
+  <article class="service featured-service" data-category="instagram"><div class="ribbon">NVGP FEATURE</div><small>EDITORIAL PACKAGE</small><h3>No Cap</h3><p>Post dedicato con presentazione del progetto e contenuto lyrics su Instagram e TikTok, più inserimento in playlist per un mese.</p><strong>€80</strong><button class="service-select" data-name="Pacchetto No Cap" data-price="80">Seleziona ↗</button></article>
+  <article class="service" data-category="tiktok"><small>TIKTOK / 01</small><h3>Post TikTok</h3><p>Pubblicazione di un post con grafica dedicata.</p><strong>€10</strong><button class="service-select" data-name="Post TikTok" data-price="10">Seleziona ↗</button></article>
+  <article class="service" data-category="tiktok"><small>TIKTOK / 02</small><h3>Video Lyrics</h3><p>Video lyrics sul profilo TikTok dedicato.</p><strong>€80</strong><button class="service-select" data-name="Video Lyrics TikTok" data-price="80">Seleziona ↗</button></article>
+  <article class="service" data-category="spotify"><small>SPOTIFY / 01</small><h3>Basic</h3><p>Inserimento in playlist per una settimana.</p><strong>€10</strong><button class="service-select" data-name="Spotify Basic" data-price="10">Seleziona ↗</button></article>
+  <article class="service" data-category="spotify"><small>SPOTIFY / 02</small><h3>Medium</h3><p>Inserimento in playlist per due settimane.</p><strong>€25</strong><button class="service-select" data-name="Spotify Medium" data-price="25">Seleziona ↗</button></article>
+  <article class="service featured-service" data-category="spotify"><div class="ribbon">LONG RUN</div><small>SPOTIFY / 03</small><h3>Premium</h3><p>Inserimento in playlist per un mese.</p><strong>€40</strong><button class="service-select" data-name="Spotify Premium" data-price="40">Seleziona ↗</button></article>
+ </div>
+ <p class="legal-note">Le promozioni non garantiscono numeri specifici di stream, follower o risultati. Nessun ascolto artificiale viene promesso. Gli inserimenti in playlist sono soggetti a valutazione editoriale e disponibilità. Verifica condizioni, tempistiche e politica di rimborso prima dell'acquisto.</p>
+</section>
+
+<section class="playlist-section" id="playlists"><div class="section">
+ <div class="section-heading"><div><p class="kicker">05 / SOUNDTRACK</p><h2>NVGP <em>PLAYLISTS.</em></h2></div><p class="muted max">Selezioni curate per scoprire nuovi suoni e tenere la scena sempre in rotazione.</p></div>
+ <div class="playlist-placeholder"><div class="playlist-cover"><span>NVGP</span><b>SELECTED<br>SOUNDS</b></div><div><p class="kicker">CURATED BY NVGP.TEAM</p><h3>La prossima traccia da scoprire è qui.</h3><p class="muted">I collegamenti Spotify ufficiali saranno mostrati in questa sezione quando inseriti dalla redazione. Non pubblichiamo link non verificati.</p><a class="text-link" href="https://open.spotify.com/" target="_blank" rel="noopener">Apri Spotify ↗</a></div></div>
+</div></section>
+
+<section class="section social-section" id="social">
+ <div class="section-heading"><div><p class="kicker">06 / FOLLOW THE MOVEMENT</p><h2>STAY <em>CONNECTED.</em></h2></div><p class="muted max">News, contenuti, aggiornamenti e nuove uscite: segui NVGP sui canali ufficiali.</p></div>
+ <div class="social-grid">
+  <a class="social-card" href="https://www.instagram.com/nvgp.team/" target="_blank" rel="noopener"><span>IG / 01</span><b>INSTAGRAM</b><small>@NVGP.TEAM ↗</small></a>
+  <a class="social-card" href="https://www.tiktok.com/@nvgpmteam" target="_blank" rel="noopener"><span>TT / 02</span><b>TIKTOK</b><small>@NVGPMTEAM ↗</small></a>
+  <a class="social-card" href="https://www.tiktok.com/@nvgp.teamnews" target="_blank" rel="noopener"><span>NEWS / 03</span><b>TIKTOK NEWS</b><small>@NVGP.TEAMNEWS ↗</small></a>
+ </div>
+</section>
+
+<section class="bot-section"><div class="section bot-inner"><div><p class="kicker">07 / NVGP INTELLIGENCE</p><h2>MEET <em>NVGP BOT.</em></h2><p class="muted">Un assistente digitale in sviluppo per orientarti tra servizi, promozione e mondo NVGP.</p><span class="status">COMING SOON</span></div><img src="nvgp-bot.png" alt="Mascotte NVGP BOT" loading="lazy"></div></section>
+
+<section class="contact-section" id="contact"><div class="section contact-grid"><div><p class="kicker">08 / JOIN THE MOVEMENT</p><h2>YOUR NEXT<br><em>MOVE STARTS HERE.</em></h2><p class="muted">Sei un artista, producer, etichetta o vuoi proporre una notizia? Raccontaci il tuo progetto.</p><div class="contact-links"><a href="https://www.instagram.com/nvgp.team/" target="_blank" rel="noopener">Instagram NVGP ↗</a><a href="https://www.tiktok.com/@nvgpmteam" target="_blank" rel="noopener">TikTok NVGP ↗</a></div></div>
+ <form id="contact-form" class="contact-form"><p class="kicker">CONTACT / COLLABORATIONS</p><label>Nome<input name="name" required placeholder="Il tuo nome"></label><label>Email<input name="email" type="email" required placeholder="nome@email.com"></label><label>Artista / Progetto<input name="project" placeholder="Nome artista o progetto"></label><label>Servizio richiesto<select name="service"><option value="">Seleziona (facoltativo)</option><option>Post Instagram</option><option>Storia Instagram</option><option>Reel Instagram</option><option>Pacchetto No Cap</option><option>Post TikTok</option><option>Video Lyrics TikTok</option><option>Spotify Basic</option><option>Spotify Medium</option><option>Spotify Premium</option><option>Proposta editoriale</option><option>Altro</option></select></label><label>Messaggio<textarea name="message" rows="4" required placeholder="Parlaci del tuo progetto..."></textarea></label><button class="btn primary full" type="submit">Prepara messaggio ↗</button><p class="form-note" id="contact-status">Si aprirà la tua app email con il messaggio già preparato. L'invio resta a tua conferma.</p></form>
+</div></section>
 </main>
-<footer><a class="logo footer-logo" href="#" aria-label="NVGP.TEAM Home"><img src="nvgp-logo.png" alt="NVGP.TEAM"></a><span>LA DETERMINAZIONE OGGI. IL SUCCESSO DOMANI.</span><div><a href="https://www.instagram.com/nvgp.team/">IG</a> <a href="https://www.tiktok.com/@nvgp.teamnews">TT</a></div><small>© <span id="year"></span> NVGP.TEAM</small></footer>
-<div class="modal" id="account-modal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modal-close">×</button><p class="kicker">NVGP MEMBER AREA</p><h2>ACCOUNT <em>ACCESS.</em></h2><div class="tabs"><button class="tab active" data-mode="login">Accedi</button><button class="tab" data-mode="signup">Registrati</button></div><form id="auth-form"><label>Email<input id="auth-email" type="email" required placeholder="email"></label><label>Password<input id="auth-password" type="password" minlength="8" required placeholder="Almeno 8 caratteri"></label><button class="btn hot full" type="submit" id="auth-submit">Accedi</button></form><p id="auth-message" class="smallprint">Area utenti: configura Supabase per abilitare registrazione e accesso.</p><div id="admin-panel" hidden><hr><p class="kicker">ADMIN DESK</p><h3>Pubblica una news</h3><form id="article-form"><label>Titolo<input id="article-title" required></label><label>Categoria<input id="article-category" value="News"></label><label>Immagine (URL)<input id="article-image" placeholder="https://..."></label><label>Testo<textarea id="article-body" required></textarea></label><button class="btn hot full">Pubblica articolo</button></form></div></div></div>
+<footer><a class="brand" href="#home"><img src="nvgp-logo.png" alt="NVGP.TEAM"></a><span>WE DON'T FOLLOW THE SCENE. WE PUSH IT.</span><div class="footer-links"><a href="https://www.instagram.com/nvgp.team/">IG</a><a href="https://www.tiktok.com/@nvgpmteam">TT</a><a href="studio/">NVGP STUDIO</a></div><small>© <span id="year"></span> NVGP.TEAM · NEVER GIVE UP.</small></footer>
+
+<div class="modal" id="account-modal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modal-close" aria-label="Chiudi">×</button><p class="kicker">NVGP MEMBER AREA</p><h2>ACCOUNT <em>ACCESS.</em></h2><div class="tabs"><button class="tab active" data-mode="login">Accedi</button><button class="tab" data-mode="signup">Registrati</button></div><form id="auth-form"><label>Email<input id="auth-email" type="email" required placeholder="email"></label><label>Password<input id="auth-password" type="password" minlength="8" required placeholder="Almeno 8 caratteri"></label><button class="btn primary full" type="submit" id="auth-submit">Accedi</button></form><p id="auth-message" class="form-note">L'area utenti richiede la configurazione Supabase descritta nel README.</p><div id="admin-panel" hidden><hr><p class="kicker">ADMIN DESK</p><h3>Pubblica una news</h3><form id="article-form"><label>Titolo<input id="article-title" required></label><label>Categoria<input id="article-category" value="Rap News"></label><label>Immagine (URL)<input id="article-image" placeholder="https://..."></label><label>Descrizione<textarea id="article-description" required></textarea></label><label>Articolo<textarea id="article-body" required></textarea></label><button class="btn primary full" type="submit">Pubblica articolo</button></form></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="script.js"></script>
 </body></html>
-<script async src="https://www.instagram.com/embed.js"></script>
