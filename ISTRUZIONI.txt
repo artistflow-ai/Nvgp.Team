@@ -1,0 +1,25 @@
+NVGP STUDIO — PACCHETTO ARTIST WORKSPACE
+
+CONTENUTO
+- studio/index.html
+- studio/studio.css
+- studio/studio.js
+
+COSA FA
+- Profilo artista salvato localmente nel browser
+- Content Lab con idee per teaser, BTS, storytelling, lyrics e release day
+- Caption Maker con toni differenti
+- Checklist campagna release
+- Release Planner con salvataggio locale
+- Press Kit Builder con anteprima e copia testo
+- Collegamenti ai servizi promozionali NVGP TEAM
+
+IMPORTANTE
+Questa versione non include mix/mastering. I generatori attuali sono modelli guidati locali, non un collegamento a un modello AI remoto. I dati vengono salvati nel browser/dispositivo e non sincronizzati tra dispositivi.
+
+INSTALLAZIONE
+1. Apri il repository GitHub artistflow-ai/Nvgp.Team.
+2. Carica la cartella studio nella root del repository (accanto a index.html e style.css).
+3. Mantieni nella root le immagini già presenti, in particolare nvgp-logo.png.
+4. La homepage originale NVGP TEAM è disponibile nella cronologia del repository al commit ca71b69c6f0439f281dfdb54227b56e02d85b57e. Se la homepage attuale mostra ancora il vecchio prototipo audio, ripristina index.html da quel commit.
+5. Dopo il commit, apri https://artistflow-ai.github.io/Nvgp.Team/studio/
